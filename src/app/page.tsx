@@ -39,7 +39,7 @@ export default function Home() {
           Dentaverax, ileri CAD/CAM teknolojisiyle dental altyapı çözümleri sunar. Yenilikçi yaklaşımıyla sektörde kalıcı üstünlükler hedefler.
           </p>
           <a
-            href="/contact"
+            href="/iletisim"
             className="inline-block bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-semibold transition"
           >
             Bizimle İletişime Geçin
