@@ -4,29 +4,30 @@ import { FaEnvelope, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-300 border-t border-gray-200 dark:border-gray-700 shadow-sm z-50">
-      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 text-sm text-center sm:text-left">
+    <footer className="bg-gradient-to-tr from-[#b2f7ef]/60 to-[#a0c4ff]/60 dark:from-[#232946]/80 dark:to-[#1a1a2e]/80 text-gray-800 dark:text-gray-200 border-t border-gray-200 dark:border-gray-700 shadow-sm z-50">
+      <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center md:items-start justify-between gap-10 text-sm">
         {/* Brand Section */}
-        <div>
-          <Link href="/" className="text-2xl font-bold text-blue-700 dark:text-blue-400">
+        <div className="flex flex-col items-center md:items-start gap-3">
+          <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/dentaverax-logo.png"
+              src="/dentaverax-logo.svg"
               alt="Dentaverax Logo"
-              width={120}
-              height={40}
+              width={48}
+              height={48}
               priority
-              className="cursor-pointer transition dark:brightness-300"
+              className="transition dark:invert"
             />
+            <span className="text-2xl font-bold text-[#232946] dark:text-[#b2f7ef]">Dentaverax</span>
           </Link>
-          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed max-w-xs">
-          Dentaverax | Dijital Dental Çözümler ve CAD/CAM Laboratuvarı.
+          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed max-w-xs mt-2 text-center md:text-left">
+            Dijital Dental Çözümler ve CAD/CAM Laboratuvarı.
           </p>
         </div>
 
         {/* Quick Links */}
-        <div>
-          <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
-          <ul className="space-y-2 text-sm">
+        <div className="flex flex-col items-center md:items-start gap-2">
+          <h3 className="text-lg font-semibold mb-2">Hızlı Erişim</h3>
+          <ul className="space-y-1 text-sm">
             <li><Link href="/hakkimizda" className="hover:underline">Hakkımızda</Link></li>
             <li><Link href="/hizmetlerimiz" className="hover:underline">Hizmetlerimiz</Link></li>
             <li><Link href="/islerimiz" className="hover:underline">İşlerimiz</Link></li>
@@ -36,12 +37,12 @@ export default function Footer() {
         </div>
 
         {/* Social Section */}
-        <div>
-          <h3 className="text-lg font-semibold mb-3">Connect</h3>
-          <ul className="space-y-3 text-sm">
+        <div className="flex flex-col items-center md:items-start gap-2">
+          <h3 className="text-lg font-semibold mb-2">Bize Ulaşın</h3>
+          <ul className="space-y-2 text-sm">
             <li className="flex items-center gap-3">
               <FaEnvelope className="text-lg" />
-              <a href="mailto:hello@lifex.com" className="hover:underline">Email</a>
+              <a href="mailto:hello@dentaverax.com" className="hover:underline">hello@dentaverax.com</a>
             </li>
             <li className="flex items-center gap-3">
               <FaInstagram className="text-lg" />
@@ -56,7 +57,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Line */}
-      <div className="text-center text-xs text-gray-500 py-6 border-t border-gray-200 dark:border-gray-700">
+      <div className="text-center text-xs text-gray-500 dark:text-gray-400 py-4 border-t border-gray-200 dark:border-gray-700">
         © {new Date().getFullYear()} Dentaverax. Tüm hakları saklıdır.
       </div>
     </footer>

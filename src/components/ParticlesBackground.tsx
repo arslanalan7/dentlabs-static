@@ -26,7 +26,7 @@ export default function ParticlesBackground() {
           move: { enable: true, speed: 0.6 },
         },
       }}
-      className="absolute inset-0 -z-10"
+      className="absolute inset-0 z-10"
     />
   );
 }
