@@ -49,20 +49,20 @@ export default function Home() {
       </svg>
 
       {/* Hero İçerik */}
-      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center gap-10 px-6 py-16 h-[calc(100vh-96px)]">
+      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center gap-10 md:px-6 py-16 md:h-[calc(100vh-96px)]">
         {/* Sol: Görsel (3/2) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="flex justify-center md:justify-start col-span-2 h-full"
+          className="flex justify-center md:justify-start md:col-span-2 h-72 md:h-full"
         >
           <Image
             src="/woman.png"
             alt="Dijital Dental"
             width={400}
             height={800}
-            className="h-[calc(100vh-99px)] w-auto object-cover"
+            className="h-72 md:h-[calc(100vh-99px)] w-auto object-cover"
             priority
           />
         </motion.div>
@@ -72,7 +72,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="flex flex-col items-start gap-8 col-span-1"
+          className="flex flex-col items-start gap-8 md:col-span-1 mt-8 md:mt-0"
         >
           <div>
             <h1 className="text-4xl md:text-6xl font-semibold text-gray-700 dark:text-white">

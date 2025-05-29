@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function FiyatListesiPage() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-tr from-[#b2f7ef]/40 to-[#a0c4ff]/40 dark:from-[#232946]/60 dark:to-[#1a1a2e]/60 pt-32 pb-16 px-4">
+    <section className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-tr from-[#b2f7ef] to-[#a0c4ff] dark:from-[#232946] dark:to-[#1a1a2e] pt-32 pb-16 px-4">
       <h1 className="text-4xl md:text-5xl font-bold mb-10 text-gray-800 dark:text-white text-center">
         Fiyat Listesi
       </h1>
