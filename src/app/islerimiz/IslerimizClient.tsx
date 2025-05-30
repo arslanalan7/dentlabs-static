@@ -47,7 +47,7 @@ export default function IslerimizPage() {
           {projects.map((item, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 hover:scale-[1.02] transition"
+              className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-xl dark:shadow-sm dark:hover:shadow-[0_0_20px_rgba(62,210,167,0.25)] transition"
             >
               <h2 className="text-xl font-semibold text-[#3ed2a7] mb-2">{item.title}</h2>
               <p className="text-gray-700 dark:text-gray-300 text-base md:text-lg">{item.desc}</p>
@@ -64,7 +64,7 @@ export default function IslerimizPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {testimonials.map((item, i) => (
-            <div key={i} className="bg-gray-100 dark:bg-gray-900 p-6 rounded-xl shadow-md text-left">
+            <div key={i} className="bg-gray-100 dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl dark:shadow-sm dark:hover:shadow-[0_0_20px_rgba(62,210,167,0.25)] text-left">
               <div className="flex gap-3 items-start">
                 <FaQuoteLeft className="text-[#3ed2a7] text-xl mt-1" />
                 <p className="text-gray-700 dark:text-gray-300 italic text-base md:text-lg">

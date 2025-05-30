@@ -23,7 +23,7 @@ export default function PartnersSection() {
         {partners.map((logo, index) => (
           <div
             key={index}
-            className="bg-gray-100 dark:bg-gray-800 p-2 rounded-xl flex items-center justify-center shadow hover:scale-105 transition"
+            className="bg-gray-100 dark:bg-gray-800 p-2 rounded-xl flex items-center justify-center shadow-md hover:shadow-xl dark:shadow-sm dark:hover:shadow-[0_0_20px_rgba(62,210,167,0.25)] transition"
           >
             <Image
                 src={logo}

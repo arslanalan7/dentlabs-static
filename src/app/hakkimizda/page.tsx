@@ -30,7 +30,7 @@ export default function AboutPage() {
             { icon: <FaTeeth />, title: 'Protez Üretimi', desc: 'Estetik ve konfor odaklı' },
             { icon: <FaStopwatch />, title: 'Hızlı Üretim', desc: 'Zamandan kazandıran sistemler' },
           ].map((item, i) => (
-            <div key={i} className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 flex flex-col items-center">
+            <div key={i} className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl dark:shadow-sm dark:hover:shadow-[0_0_20px_rgba(62,210,167,0.25)] p-6 flex flex-col items-center">
               <div className="text-4xl text-[#3ed2a7] mb-4">{item.icon}</div>
               <h3 className="font-semibold text-[#3ed2a7] text-center">{item.title}</h3>
               <p className="text-sm text-gray-600 dark:text-gray-300 text-center">{item.desc}</p>

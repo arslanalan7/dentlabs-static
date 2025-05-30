@@ -38,7 +38,7 @@ export default function WhyUsSection() {
         {features.map((feature, index) => (
           <div
             key={index}
-            className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-6 rounded-xl shadow hover:shadow-lg transition"
+            className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-6 rounded-xl shadow-md hover:shadow-xl dark:shadow-sm dark:hover:shadow-[0_0_20px_rgba(62,210,167,0.25)] transition"
           >
             <div className="mb-4">{feature.icon}</div>
             <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2">

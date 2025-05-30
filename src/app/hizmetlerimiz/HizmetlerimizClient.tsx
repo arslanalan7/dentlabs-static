@@ -60,7 +60,7 @@ export default function HizmetlerimizClient() {
           {services.map((service, i) => (
             <div
               key={i}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 text-center hover:scale-[1.02] transition"
+              className="bg-white dark:bg-gray-800 rounded-xl p-6 text-center shadow-md hover:shadow-xl dark:shadow-sm dark:hover:shadow-[0_0_20px_rgba(62,210,167,0.25)] transition"
             >
               {service.icon}
               <h2 className="text-xl font-semibold mb-2 text-gray-800 dark:text-[#b2f7ef]">

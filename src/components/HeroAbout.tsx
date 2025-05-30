@@ -14,13 +14,13 @@ export default function HeroAbout() {
 
         {/* Sağ: Misyon & Vizyon Kartları */}
         <div className="space-y-6">
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl dark:shadow-sm dark:hover:shadow-[0_0_20px_rgba(62,210,167,0.25)] p-6">
             <h2 className="text-2xl font-bold text-[#3ed2a7] mb-2">Misyonumuz</h2>
             <p className="text-gray-700 dark:text-gray-300">
               Diş hekimlerinin ve kliniklerin tüm ihtiyaçlarını anlayarak onlara yüksek kaliteli, hızlı ve dijital çözümler sunmak. Hasta memnuniyetini ve hekim verimliliğini artırmak için çalışıyoruz.
             </p>
           </div>
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl dark:shadow-sm dark:hover:shadow-[0_0_20px_rgba(62,210,167,0.25)] p-6">
             <h2 className="text-2xl font-bold text-[#3ed2a7] mb-2">Vizyonumuz</h2>
             <p className="text-gray-700 dark:text-gray-300">
               Dijital dental çözümler alanında, yenilikçi üretim teknikleriyle global pazarda tanınan ve güven duyulan bir laboratuvar olmak.

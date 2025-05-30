@@ -56,7 +56,7 @@ export default function FiyatListesiClient() {
           {fiyatListesi.map((kategori, idx) => (
             <div
               key={idx}
-              className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-sm"
+              className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-xl dark:shadow-sm dark:hover:shadow-[0_0_20px_rgba(62,210,167,0.25)]"
             >
               <h2 className="text-xl md:text-2xl font-bold text-[#3ed2a7] border-b border-[#3ed2a7] pb-2 mb-4">
                 {kategori.kategori}

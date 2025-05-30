@@ -19,7 +19,7 @@ export default function StatsSection() {
         {stats.map((stat, i) => (
           <div
             key={i}
-            className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-8 text-center"
+            className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl dark:shadow-sm dark:hover:shadow-[0_0_20px_rgba(62,210,167,0.25)] p-8 text-center"
           >
             <div className="text-5xl font-extrabold text-[#3ed2a7] mb-4">{stat.value}</div>
             <p className="text-gray-700 dark:text-gray-300 text-lg font-medium">{stat.label}</p>
