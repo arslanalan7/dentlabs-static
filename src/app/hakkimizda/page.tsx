@@ -1,25 +1,51 @@
-import type { Metadata } from "next";
+'use client'
 
-export const metadata: Metadata = {
-  title: "Hakkımızda | Dentaverax",
-  description:
-    "Dentaverax, bireyler ve işletmeler için kişisel gelişim, finansal sağlık ve iş verimliliği alanlarında dijital çözümler sunan modern bir danışmanlık platformudur.",
-};
+import { FaTooth, FaTeethOpen, FaMicroscope, FaAlignCenter, FaSmile, FaShieldAlt, FaTeeth, FaStopwatch } from 'react-icons/fa';
+import HeroAbout from '@/components/HeroAbout';
+import StatsSection from '@/components/StatsSection';
+import ContactCTA from '@/components/ContactCTA';
 
-export default function HakkimizdaPage() {
+
+export default function AboutPage() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-tr from-[#b2f7ef] to-[#a0c4ff] dark:from-[#232946] dark:to-[#1a1a2e] pt-32 pb-16 px-4">
-      <div className="max-w-3xl w-full bg-white/80 dark:bg-gray-900/70 rounded-xl shadow-md p-8 mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800 dark:text-white text-center">
-          Hakkımızda
-        </h1>
-        <p className="text-lg text-gray-700 dark:text-gray-300 mb-4 leading-relaxed text-center">
-          Dentaverax, bireyler ve küçük işletmeler için kişisel gelişim, iş verimliliği ve finansal farkındalık odaklı modern dijital çözümler sunar.
-        </p>
-        <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed text-center">
-          Misyonumuz; insanların fiziksel, zihinsel ve finansal yaşam kalitesini artıracak araçlar ve danışmanlık hizmetleri ile dijital dönüşümlerine rehberlik etmektir.
-        </p>
-      </div>
-    </section>
+    <>
+      <HeroAbout />
+
+      {/* Yetkinlikler / İmkanlar */}
+      <section className="bg-[#f0faff] dark:bg-[#1a1a2e] py-24 px-4">
+        <div className="max-w-6xl mx-auto text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#3ed2a7] mb-4">Dentaverax Yetkinlikleri</h2>
+          <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Dentaverax olarak sunduğumuz dijital hizmetler ve teknik altyapılarla üretim süreçlerinde hız, doğruluk ve estetik sağlıyoruz.
+          </p>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-center text-center">
+          {[
+            { icon: <FaTooth />, title: 'Genel Dişçilik', desc: 'Güncel tedavi planlamaları' },
+            { icon: <FaTeethOpen />, title: 'İmplant Üretimi', desc: 'Titanyum uyumlu altyapılar' },
+            { icon: <FaMicroscope />, title: 'Dijital Cerrahi', desc: 'CAD/CAM destekli kesim' },
+            { icon: <FaAlignCenter />, title: 'Hizalama Çözümleri', desc: 'Ortodotik planlama destekli' },
+            { icon: <FaSmile />, title: 'Beyazlatma', desc: 'Estetik öncelikli çözümler' },
+            { icon: <FaShieldAlt />, title: 'Diş Koruma', desc: 'Ağız koruyucular ve gece plağı' },
+            { icon: <FaTeeth />, title: 'Protez Üretimi', desc: 'Estetik ve konfor odaklı' },
+            { icon: <FaStopwatch />, title: 'Hızlı Üretim', desc: 'Zamandan kazandıran sistemler' },
+          ].map((item, i) => (
+            <div key={i} className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 flex flex-col items-center">
+              <div className="text-4xl text-[#3ed2a7] mb-4">{item.icon}</div>
+              <h3 className="font-semibold text-[#3ed2a7] text-center">{item.title}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300 text-center">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      <StatsSection />
+      <ContactCTA
+        title="Bizimle tanışmak ister misiniz?"
+        description="Dentaverax’ın yaklaşımını ve değerlerini daha yakından tanımak için iletişime geçebilirsiniz."
+        buttonText="Bize Ulaşın"
+        buttonHref="/iletisim"
+      />
+
+    </>
   );
 }

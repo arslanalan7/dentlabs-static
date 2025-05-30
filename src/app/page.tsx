@@ -6,8 +6,7 @@ import ParticlesBackground from '../components/ParticlesBackground';
 import WhyUsSection from '@/components/WhyUsSection';
 import AboutPreview from '@/components/AboutPreview';
 import PartnersSection from '@/components/PartnersSection';
-import ContactCTA from "@/components/ContactCTA";
-
+import ContactCTA from '@/components/ContactCTA';
 
 export default function Home() {
   return (
@@ -96,13 +95,32 @@ export default function Home() {
             </a>
           </motion.div>
         </div>
+
+        {/* Scroll Hint */}
+        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+          <svg
+            className="w-6 h-6 text-white dark:text-[#3ed2a7]"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </div>
       </section>
 
       {/* Diğer Bölümler */}
       <WhyUsSection />
       <AboutPreview />
       <PartnersSection />
-      <ContactCTA />
+      <ContactCTA
+        title="Dijital dental çözümlerimizle tanışmaya hazır mısınız?"
+        description="Size özel çözümler ve detaylı bilgi için bizimle iletişime geçin."
+        buttonText="İletişime Geçin"
+        buttonHref="/iletisim"
+      />
     </main>
   );
 }
