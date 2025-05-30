@@ -1,7 +1,7 @@
 'use client';
 
 import { FaQuoteLeft } from "react-icons/fa";
-
+import { FaTooth } from "react-icons/fa";
 import ContactCTA from '@/components/ContactCTA';
 
 const projects = [
@@ -14,7 +14,7 @@ const projects = [
     desc: "Eksik diş problemi yaşayan hastaya, tam uyumlu implant üstü sabit restorasyon uygulandı. Hasta memnuniyeti üst düzeydeydi.",
   },
   {
-    title: "Model’siz CAD/CAM Uygulaması",
+    title: "Modelsiz CAD/CAM Uygulaması",
     desc: "Dijital ölçü alımı sonrası model gereksinimi olmadan hızlı üretim sağlayan bir diş kliniği ile modeless üretim başarıyla test edildi.",
   },
 ];
@@ -68,13 +68,16 @@ export default function IslerimizPage() {
             <div key={i} className="bg-gray-100 dark:bg-gray-900 p-6 rounded-xl shadow-md text-left">
               <div className="flex gap-3 items-start">
                 <FaQuoteLeft className="text-[#3ed2a7] text-xl mt-1" />
-                <p className="text-gray-700 dark:text-gray-300 italic text-base md:text-lg">"{item.comment}"</p>
+                <p className="text-gray-700 dark:text-gray-300 italic text-base md:text-lg">
+                  &ldquo;{item.comment}&rdquo;
+                </p>
               </div>
               <p className="mt-4 text-right font-semibold text-[#3ed2a7]">— {item.name}</p>
             </div>
           ))}
         </div>
       </section>
+
       {/* CTA Section */}
       <ContactCTA
         title="Sizin başarınız da bir sonraki hikaye olabilir"
@@ -82,7 +85,6 @@ export default function IslerimizPage() {
         buttonText="İletişim Kur"
         buttonHref="/iletisim"
       />
-
     </>
   );
 }
