@@ -1,7 +1,6 @@
 'use client';
 
 import { FaQuoteLeft } from "react-icons/fa";
-import { FaTooth } from "react-icons/fa";
 import ContactCTA from '@/components/ContactCTA';
 
 const projects = [
