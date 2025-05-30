@@ -69,7 +69,7 @@ export default function IslerimizPage() {
               <div className="flex gap-3 items-start">
                 <FaQuoteLeft className="text-[#3ed2a7] text-xl mt-1" />
                 <p className="text-gray-700 dark:text-gray-300 italic text-base md:text-lg">
-                  &ldquo;{item.comment}&rdquo;
+                  {item.comment}
                 </p>
               </div>
               <p className="mt-4 text-right font-semibold text-[#3ed2a7]">— {item.name}</p>
