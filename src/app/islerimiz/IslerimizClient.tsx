@@ -3,6 +3,7 @@
 import { FaQuoteLeft } from "react-icons/fa";
 import ContactCTA from '@/components/ContactCTA';
 
+
 const projects = [
   {
     title: "Zirkonyum Destekli Gülüş Tasarımı",
@@ -42,7 +43,7 @@ export default function IslerimizPage() {
             Dentaverax olarak sadece dental altyapılar üretmiyoruz. Kliniklerle kurduğumuz güçlü iş birlikleriyle her vakayı başarı hikayesine dönüştürüyoruz.
           </p>
         </div>
-
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-8">
           {projects.map((item, index) => (
             <div

@@ -16,12 +16,12 @@ export default function ContactCTA({
   buttonHref = '/iletisim',
 }: ContactCTAProps) {
   return (
-    <section className="py-16 px-6 md:px-16 bg-[#3ed2a7] dark:bg-[#2fb397] text-white">
+    <section className="py-16 px-6 md:px-16 bg-[#3ed2a7] dark:bg-[#2fb397] text-white mb-0">
       <div className="max-w-4xl mx-auto text-center space-y-6">
         <h2 className="text-3xl md:text-4xl font-bold">{title}</h2>
         <p className="text-lg md:text-xl text-white/90">{description}</p>
         <Link href={buttonHref}>
-          <span className="inline-block bg-white text-[#232946] font-semibold px-8 py-4 rounded-full shadow-md hover:bg-gray-100 transition">
+          <span className="inline-block bg-white text-[#232946] font-semibold px-8 py-4 rounded-full shadow-md hover:bg-[#d9f5ef] transition">
             {buttonText}
           </span>
         </Link>

@@ -30,8 +30,8 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="w-full bg-transparent absolute top-0 left-0 z-50">
-      <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+    <nav className="w-full fixed top-0 left-0 z-50 backdrop-blur-md bg-white/80 dark:bg-[#0f172a]/80 shadow-sm">
+      <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
@@ -42,7 +42,7 @@ export default function Navbar() {
             priority
             className="transition dark:invert"
           />
-          <span className="text-2xl font-bold text-white dark:text-[#b2f7ef]">Dentaverax</span>
+          <span className="text-2xl font-bold text-gray-800 dark:text-[#b2f7ef]">Dentaverax</span>
         </Link>
 
         {/* Desktop Menu */}
@@ -51,10 +51,10 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-base font-medium transition ${
+              className={`text-base font-semibold transition ${
                 pathname === link.href
-                  ? 'text-white dark:text-[#b2f7ef] underline underline-offset-4'
-                  : 'text-white/90 dark:text-[#b2f7ef]/80 hover:text-white dark:hover:text-[#b2f7ef]'
+                  ? 'text-black dark:text-[#b2f7ef] underline underline-offset-4 decoration-[#3ed2a7]'
+                  : 'text-gray-700 dark:text-[#b2f7ef]/80 hover:text-black dark:hover:text-white'
               }`}
             >
               {link.label}
@@ -65,17 +65,17 @@ export default function Navbar() {
         {/* Sağda karanlık mod ve sosyal ikonlar */}
         <div className="hidden md:flex items-center gap-4">
           <DarkModeToggle />
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-pink-400 transition">
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-700 dark:text-[#b2f7ef]/80 hover:text-pink-400 transition">
             <FaInstagram size={20} />
           </a>
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-blue-400 transition">
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-700 dark:text-[#b2f7ef]/80 hover:text-blue-400 transition">
             <FaLinkedin size={20} />
           </a>
         </div>
 
         {/* Hamburger */}
         <button
-          className="md:hidden flex items-center text-white dark:text-[#b2f7ef]"
+          className="md:hidden flex items-center text-gray-700 dark:text-[#b2f7ef]"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -92,17 +92,17 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden bg-gradient-to-tr from-[#b2f7ef] to-[#a0c4ff] dark:from-[#232946] dark:to-[#1a1a2e] px-6 pb-6 shadow-md"
+            className="md:hidden backdrop-blur-md bg-white/80 dark:bg-[#0f172a]/80 px-6 pb-6 shadow-md"
           >
             <div className="flex flex-col gap-4">
               {navLinks.map(link => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-base font-medium transition ${
+                  className={`text-base font-semibold transition ${
                     pathname === link.href
-                      ? 'text-[#232946] dark:text-[#b2f7ef] underline underline-offset-4'
-                      : 'text-[#232946]/80 dark:text-[#b2f7ef]/80 hover:text-[#232946] dark:hover:text-[#b2f7ef]'
+                      ? 'text-black dark:text-[#b2f7ef] underline underline-offset-4 decoration-[#3ed2a7]'
+                      : 'text-gray-700 dark:text-[#b2f7ef]/80 hover:text-black dark:hover:text-white'
                   }`}
                   onClick={() => setMenuOpen(false)}
                 >
@@ -110,10 +110,10 @@ export default function Navbar() {
                 </Link>
               ))}
               <div className="flex items-center gap-4 mt-2">
-                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="text-[#232946]/80 dark:text-[#b2f7ef]/80 hover:text-pink-400 transition">
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-700 dark:text-[#b2f7ef]/80 hover:text-pink-400 transition">
                   <FaInstagram size={20} />
                 </a>
-                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-[#232946]/80 dark:text-[#b2f7ef]/80 hover:text-blue-400 transition">
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-700 dark:text-[#b2f7ef]/80 hover:text-blue-400 transition">
                   <FaLinkedin size={20} />
                 </a>
                 <DarkModeToggle />

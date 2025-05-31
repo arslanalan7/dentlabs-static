@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import Image from 'next/image';
 import ParticlesBackground from '../components/ParticlesBackground';
 import WhyUsSection from '@/components/WhyUsSection';
@@ -22,7 +22,7 @@ export default function Home() {
           viewBox="0 0 350 200"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute top-16 right-16 z-0 pointer-events-none"
+          className="absolute top-24 right-16 z-0 pointer-events-none"
         >
           <ellipse
             cx="175"
@@ -54,11 +54,12 @@ export default function Home() {
         </svg>
 
         {/* Hero İçerik */}
-        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center gap-10 md:px-6 py-16 md:h-[calc(100vh-96px)]">
+        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center md:gap-10 md:px-6 py-16 md:h-[calc(100vh-96px)]">
           {/* Sol: Görsel (3/2) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 1, delay: 0.2 }}
             className="flex justify-center md:justify-start md:col-span-2 h-72 md:h-full"
           >
@@ -75,7 +76,8 @@ export default function Home() {
           {/* Sağ: Başlık ve CTA (3/1) */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="flex flex-col items-start gap-8 md:col-span-1 mt-8 md:mt-0"
           >
