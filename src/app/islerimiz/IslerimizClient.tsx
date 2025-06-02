@@ -3,6 +3,7 @@
 
 import { FaQuoteLeft } from 'react-icons/fa';
 import ContactCTA from '@/components/ContactCTA';
+import StatsSection from '@/components/StatsSection';
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 
@@ -65,11 +66,37 @@ export default function IslerimizPage() {
           >
             Dentaverax olarak sadece dental altyapılar üretmiyoruz. Kliniklerle kurduğumuz güçlü iş birlikleriyle her vakayı başarı hikayesine dönüştürüyoruz.
           </motion.p>
+          <motion.div
+            className="mt-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
+              Başarıya ulaşmak için doğru iş ortağı ile çalışmak şart. Projelerinizi birlikte hayata geçirelim.
+            </p>
+            <a
+              href="/iletisim"
+              className="inline-block bg-[#3ed2a7] text-white font-semibold px-6 py-3 rounded-full shadow-md hover:bg-[#34c3a0] transition"
+            >
+             Bize Ulaşın
+            </a>
+          </motion.div>
         </div>
       </section>
 
       {/* Projeler Section */}
       <section className="bg-white dark:bg-[#111827] py-24 px-4 text-gray-800 dark:text-white">
+        <motion.h2
+            className="text-3xl md:text-4xl font-bold text-center text-[#3ed2a7] mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+          >
+            Son Projelerimizden Bazıları
+        </motion.h2>
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-8"
           initial={{ opacity: 0, y: 20 }}
@@ -126,6 +153,17 @@ export default function IslerimizPage() {
           ))}
         </motion.div>
       </section>
+
+      <StatsSection
+        variant="inverted"
+        title="Klinik Performans Verilerimiz"
+        description="Deneyim ve güvene dayalı klinik sonuçlarımız."
+        items={[
+          { label: 'Tamamlanan Vaka', value: 1200 },
+          { label: 'Ortalama Teslim Süresi', value: 2.4, suffix: ' gün' },
+          { label: 'Tekrar Sipariş Oranı', value: 88, suffix: '%' },
+        ]}
+      />
 
       <ContactCTA
         title="Sizin başarınız da bir sonraki hikaye olabilir"

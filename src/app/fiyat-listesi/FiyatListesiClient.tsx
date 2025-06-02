@@ -70,15 +70,51 @@ export default function FiyatListesiClient() {
           >
             Dentaverax olarak kalite, estetik ve dijital hassasiyeti bir arada sunuyoruz. Aşağıda yer alan fiyatlarımız bilgilendirme amaçlıdır.
           </motion.p>
+          <motion.div
+            className="mt-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
+              Güncel kampanyalar ve özel indirimler için lütfen bizimle iletişime geçin.
+            </p>
+            <a
+              href="/iletisim"
+              className="inline-block bg-[#3ed2a7] text-white font-semibold px-6 py-3 rounded-full shadow-md hover:bg-[#34c3a0] transition"
+            >
+             Özel Teklif İsteyin
+            </a>
+          </motion.div>
         </div>
       </section>
 
       {/* Fiyat Kartları */}
       <section className="bg-white dark:bg-[#111827] py-24 px-4 text-gray-800 dark:text-white">
-        <div className="max-w-5xl mx-auto bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8 space-y-12">
+        <motion.h2
+            className="text-3xl md:text-4xl font-bold text-center text-[#3ed2a7] mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+          >
+            Güncel Fiyat Listemiz
+        </motion.h2>
+        <motion.div
+          className="max-w-5xl mx-auto bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8 space-y-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+        >
           {fiyatListesi.map((kategori, idx) => (
-            <div
+            <motion.div
               key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: idx * 0.2 }}
               className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-xl dark:shadow-sm dark:hover:shadow-[0_0_20px_rgba(62,210,167,0.25)]"
             >
               <h2 className="text-xl md:text-2xl font-bold text-[#3ed2a7] border-b border-[#3ed2a7] pb-2 mb-4">
@@ -99,9 +135,9 @@ export default function FiyatListesiClient() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       {/* CTA */}

@@ -76,11 +76,37 @@ export default function HizmetlerimizClient() {
           >
             Dijital diş hekimliği alanında size özel, güvenilir ve yüksek teknolojili laboratuvar hizmetleri sunuyoruz.
           </motion.p>
+          <motion.div
+            className="mt-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
+              Aradığınız dijital dental çözüm burada olabilir.
+            </p>
+            <a
+              href="/iletisim"
+              className="inline-block bg-[#3ed2a7] text-white font-semibold px-6 py-3 rounded-full shadow-md hover:bg-[#34c3a0] transition"
+            >
+              Hemen İletişime Geçin
+            </a>
+          </motion.div>
         </div>
       </section>
 
-      {/* Hizmet Listesi Section */}
+      {/* Hizmet Kartları */}
       <section className="bg-white dark:bg-[#111827] py-24 px-4 text-gray-800 dark:text-white">
+        <motion.h2
+            className="text-3xl md:text-4xl font-bold text-center text-[#3ed2a7] mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+          >
+            Size Nasıl Yardımcı Olabiliriz?
+        </motion.h2>
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
@@ -102,6 +128,50 @@ export default function HizmetlerimizClient() {
           ))}
         </motion.div>
       </section>
+
+      {/* Video Section */}
+      <section className="bg-[#f9fafb] dark:bg-[#1e293b] py-20 px-4 text-center text-gray-800 dark:text-white">
+        <div className="max-w-5xl mx-auto space-y-6">
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8 }}
+          >
+            Hizmet Süreçlerimizi İzleyin
+          </motion.h2>
+
+          <motion.p
+            className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            CAD/CAM destekli altyapı üretimi ve dijital süreç yönetimine kısa bir bakış.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <video
+              controls
+              autoPlay
+              loop
+              muted
+              className="w-full h-auto rounded-xl shadow-xl border border-gray-200 dark:border-gray-700"
+            >
+              <source src="/dentaverax-hizmetler.mp4" type="video/mp4" />
+              Tarayıcınız video öğesini desteklemiyor.
+            </video>
+          </motion.div>
+        </div>
+      </section>
+
 
       <ContactCTA
         title="Size en uygun dijital çözümü birlikte bulalım"

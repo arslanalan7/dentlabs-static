@@ -76,7 +76,7 @@ export default function AboutClient() {
         <div className="max-w-4xl mx-auto text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Biz Kimiz?</h2>
           <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-            Dentaverax, 2022 yılında dijital diş hekimliği alanında uzman, yenilikçi bir kadro ile kurulmuştur. Kalite, hız ve estetik temel alan yaklaşımıyla kliniklere yüksek teknolojili çözümler sunmaktadır.
+            Dentaverax, 2014 yılında dijital diş hekimliği alanında uzman, yenilikçi bir kadro ile kurulmuştur. Kalite, hız ve estetik temel alan yaklaşımıyla kliniklere yüksek teknolojili çözümler sunmaktadır.
           </p>
         </div>
 
