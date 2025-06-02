@@ -1,40 +1,48 @@
+'use client';
+
 import Image from 'next/image';
+import { motion } from 'motion/react';
+
+const partners = [
+  { name: 'Partner 1', logo: '/logos/logo1.jpg' },
+  { name: 'Partner 2', logo: '/logos/logo2.jpg' },
+  { name: 'Partner 3', logo: '/logos/logo3.jpg' },
+  { name: 'Partner 4', logo: '/logos/logo4.jpg' },
+  { name: 'Partner 5', logo: '/logos/logo5.jpg' },
+];
 
 export default function PartnersSection() {
-  const partners = [
-    '/logos/logo1.svg',
-    '/logos/logo2.svg',
-    '/logos/logo3.svg',
-    '/logos/logo4.svg',
-    '/logos/logo5.svg',
-  ];
-
   return (
-    <section className="py-20 bg-[#f0faff] dark:bg-[#1a1a2e] px-6 md:px-16">
-      <div className="max-w-6xl mx-auto text-center mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white">
-          Bize Güvenen İş Ortaklarımız
-        </h2>
-        <p className="text-gray-600 dark:text-gray-300 mt-2">
-          Diş hekimlerinden klinik zincirlerine kadar geniş bir çözüm ağına sahibiz.
+    <section className="bg-white dark:bg-gray-900 py-24 px-4">
+      <motion.div
+        className="max-w-6xl mx-auto text-center mb-12"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">İş Ortaklarımız</h2>
+        <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          Dentaverax olarak güvenilir çözüm ortaklarımızla birlikte kalite ve süreklilik sunuyoruz.
         </p>
-      </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center justify-center max-w-5xl mx-auto">
-        {partners.map((logo, index) => (
+      </motion.div>
+
+      <motion.div
+        className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-center max-w-5xl mx-auto"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+      >
+        {partners.map((partner, i) => (
           <div
-            key={index}
-            className="bg-gray-100 dark:bg-gray-800 p-2 rounded-xl flex items-center justify-center shadow-md hover:shadow-xl dark:shadow-sm dark:hover:shadow-[0_0_20px_rgba(62,210,167,0.25)] transition"
+            key={i}
+            className="flex items-center justify-center"
           >
-            <Image
-                src={logo}
-                alt={`Partner ${index + 1}`}
-                width={100}
-                height={48}
-                className="h-16 w-auto object-contain"
-                />
+            <Image src={partner.logo} alt={partner.name} width={120} height={60} className="object-contain" />
           </div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

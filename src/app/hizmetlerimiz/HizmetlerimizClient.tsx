@@ -1,3 +1,4 @@
+// ----- Client Component: HizmetlerimizClient.tsx -----
 'use client';
 
 import {
@@ -8,8 +9,9 @@ import {
   FaTeeth,
   FaXRay,
 } from 'react-icons/fa';
-
 import ContactCTA from '@/components/ContactCTA';
+import { motion } from 'motion/react';
+import { useEffect, useState } from 'react';
 
 const services = [
   {
@@ -45,18 +47,47 @@ const services = [
 ];
 
 export default function HizmetlerimizClient() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (!mounted) return null;
+
   return (
     <>
-      <section className="relative bg-gradient-to-tr from-[#b2f7ef] to-[#a0c4ff] dark:from-[#232946] dark:to-[#1a1a2e] pt-48 pb-32 px-4 text-gray-800 dark:text-white">
-        <div className="max-w-6xl mx-auto text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4 md:mb-8">
+      {/* Hero Section */}
+      <section className="pt-48 pb-36 px-6 bg-gradient-to-br from-[#b2f7ef] to-[#a0c4ff] dark:from-[#1a1a2e] dark:to-[#232946] text-gray-800 dark:text-white relative overflow-hidden">
+        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
+          <motion.h1
+            className="text-4xl md:text-6xl font-semibold text-gray-700 dark:text-white"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+          >
             Hizmetlerimiz
-          </h1>
-          <p className="text-gray-700 dark:text-gray-300 max-w-3xl mx-auto text-lg md:text-xl">
-            Dentaverax olarak dijital diş hekimliği alanında uçtan uca laboratuvar çözümleri sunuyoruz. Klinik ihtiyaçlara özel yüksek teknolojiyle üretiyor, zamanında teslimat ve estetik beklentiyi bir araya getiriyoruz.
-          </p>
+          </motion.h1>
+          <motion.p
+            className="text-2xl md:text-4xl italic text-gray-500 dark:text-[#b2f7ef] mt-2"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Dijital diş hekimliği alanında size özel, güvenilir ve yüksek teknolojili laboratuvar hizmetleri sunuyoruz.
+          </motion.p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      </section>
+
+      {/* Hizmet Listesi Section */}
+      <section className="bg-white dark:bg-[#111827] py-24 px-4 text-gray-800 dark:text-white">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8 }}
+        >
           {services.map((service, i) => (
             <div
               key={i}
@@ -69,15 +100,15 @@ export default function HizmetlerimizClient() {
               <p className="text-gray-600 dark:text-gray-300 text-sm">{service.desc}</p>
             </div>
           ))}
-        </div>
+        </motion.div>
       </section>
+
       <ContactCTA
         title="Size en uygun dijital çözümü birlikte bulalım"
         description="Dijital diş hekimliği alanındaki tüm ihtiyaçlarınız için bizimle iletişime geçin."
         buttonText="Hemen Görüşelim"
         buttonHref="/iletisim"
       />
-
     </>
   );
 }

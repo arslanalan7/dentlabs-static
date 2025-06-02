@@ -31,13 +31,7 @@ export default function AboutClient() {
     <>
       {/* Hero section */}
       <section className="pt-40 pb-36 px-6 bg-gradient-to-br from-[#b2f7ef] to-[#a0c4ff] dark:from-[#1a1a2e] dark:to-[#232946] text-gray-800 dark:text-white relative overflow-hidden">
-        {/* Background pattern */}
-        <div className="absolute inset-0 bg-[url('/dots-bg.svg')] bg-repeat bg-center bg-[length:50px_50px] opacity-10 pointer-events-none z-0" />
-        {/* Semi-transparent overlay */}
-        <div className="absolute inset-0 bg-white/60 dark:bg-black/30  z-0" />
-
         <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
-          {/* Sol Metin */}
           <motion.div
             className="flex-1 text-center md:text-left space-y-6"
             initial={{ opacity: 0, y: 30 }}
@@ -45,15 +39,14 @@ export default function AboutClient() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+            <h1 className="text-4xl md:text-6xl font-semibold text-gray-700 dark:text-white leading-tight">
               Dijital Dentalin Yeni Tanımı
             </h1>
-            <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-xl">
+            <p className="text-2xl md:text-4xl italic text-gray-500 dark:text-[#b2f7ef] mt-2">
               Deneyim, estetik ve teknoloji odaklı çözümler sunan Dentaverax ile tanışın.
             </p>
           </motion.div>
 
-          {/* Sağ Görsel */}
           <motion.div
             className="flex-1 relative"
             initial={{ opacity: 0, scale: 0.9 }}
@@ -73,7 +66,13 @@ export default function AboutClient() {
       </section>
 
       {/* Misyon + Vizyon modern blok düzen */}
-      <section className="py-24 px-6 bg-white dark:bg-[#111827] text-gray-800 dark:text-white">
+      <motion.section
+        className="py-24 px-6 bg-white dark:bg-[#111827] text-gray-800 dark:text-white"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6 }}
+      >
         <div className="max-w-4xl mx-auto text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Biz Kimiz?</h2>
           <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
@@ -82,7 +81,7 @@ export default function AboutClient() {
         </div>
 
         <div className="flex flex-col md:flex-row gap-6 max-w-5xl mx-auto">
-          <div className="bg-[#f0faff] dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl dark:shadow-sm dark:hover:shadow-[0_0_20px_rgba(62,210,167,0.25)] transition flex-1">
+          <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl transition flex-1">
             <h3 className="text-xl font-semibold text-[#3ed2a7] mb-2 flex items-center gap-2">
               <FaBullseye className="text-[#3ed2a7]" /> Misyonumuz
             </h3>
@@ -91,7 +90,7 @@ export default function AboutClient() {
             </p>
           </div>
 
-          <div className="bg-[#f0faff] dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl dark:shadow-sm dark:hover:shadow-[0_0_20px_rgba(62,210,167,0.25)] transition flex-1">
+          <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl transition flex-1">
             <h3 className="text-xl font-semibold text-[#3ed2a7] mb-2 flex items-center gap-2">
               <FaRocket className="text-[#3ed2a7]" /> Vizyonumuz
             </h3>
@@ -100,10 +99,16 @@ export default function AboutClient() {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Yetkinlikler / İmkanlar */}
-      <section className="bg-[#f0faff] dark:bg-[#1a1a2e] py-24 px-4">
+      <motion.section
+        className="bg-[#f0faff] dark:bg-[#1a1a2e] py-24 px-4"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6 }}
+      >
         <div className="max-w-6xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-[#3ed2a7] mb-4">Dentaverax Yetkinlikleri</h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
@@ -122,14 +127,14 @@ export default function AboutClient() {
             { icon: <FaTeeth />, title: 'Protez Üretimi', desc: 'Estetik ve konfor odaklı' },
             { icon: <FaStopwatch />, title: 'Hızlı Üretim', desc: 'Zamandan kazandıran sistemler' },
           ].map((item, i) => (
-            <div key={i} className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl dark:shadow-sm dark:hover:shadow-[0_0_20px_rgba(62,210,167,0.25)] p-6 flex flex-col items-center">
+            <div key={i} className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl p-6 flex flex-col items-center">
               <div className="text-4xl text-[#3ed2a7] mb-4">{item.icon}</div>
               <h3 className="font-semibold text-[#3ed2a7] text-center">{item.title}</h3>
               <p className="text-sm text-gray-600 dark:text-gray-300 text-center">{item.desc}</p>
             </div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       <StatsSection />
 

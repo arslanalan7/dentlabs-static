@@ -33,7 +33,7 @@ export default function IletisimPage() {
             </div>
             <div className="flex items-center gap-3">
               <a
-                href="https://www.google.com/maps?q=123+Anywhere+St,+Any+City,+ST+12345&output=embed"
+                href="https://www.google.com/maps?q=123+Anywhere+St,+Any+City,+ST+12345"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-[var(--accent)] hover:underline"

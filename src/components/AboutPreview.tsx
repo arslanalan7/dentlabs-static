@@ -1,9 +1,16 @@
 import Image from 'next/image';
+import { motion } from 'motion/react';
 
 export default function AboutPreview() {
   return (
     <section className="py-20 px-6 md:px-16 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 items-center gap-12">
+      <motion.div
+        className="max-w-6xl mx-auto grid md:grid-cols-2 items-center gap-12"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
             Dijital Dental Çözümlerde <span className="text-[#3ed2a7]">Güvenilir Partner</span>
@@ -31,7 +38,7 @@ export default function AboutPreview() {
             className="rounded-xl shadow-lg"
           />
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

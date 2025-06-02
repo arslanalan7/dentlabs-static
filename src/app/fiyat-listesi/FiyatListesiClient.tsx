@@ -1,6 +1,9 @@
+// ----- Client Component: FiyatListesiClient.tsx -----
 'use client';
 
 import ContactCTA from '@/components/ContactCTA';
+import { motion } from 'motion/react';
+import { useEffect, useState } from 'react';
 
 const fiyatListesi = [
   {
@@ -38,20 +41,40 @@ const fiyatListesi = [
 ];
 
 export default function FiyatListesiClient() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (!mounted) return null;
+
   return (
     <>
-      {/* Fiyat Listesi Alanı */}
-      <section className="relative bg-gradient-to-tr from-[#b2f7ef] to-[#a0c4ff] dark:from-[#232946] dark:to-[#1a1a2e] pt-48 pb-32 px-4 text-gray-800 dark:text-white">
-        <div className="max-w-6xl mx-auto text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4 md:mb-8">
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-[#b2f7ef] to-[#a0c4ff] dark:from-[#1a1a2e] dark:to-[#232946] pt-48 pb-36 px-6 text-gray-800 dark:text-white overflow-hidden">
+        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
+          <motion.h1
+            className="text-4xl md:text-6xl font-semibold text-gray-700 dark:text-white"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+          >
             Fiyat Listesi
-          </h1>
-          <p className="text-gray-700 dark:text-gray-300 max-w-3xl mx-auto text-lg md:text-xl">
+          </motion.h1>
+          <motion.p
+            className="text-2xl md:text-4xl italic text-gray-500 dark:text-[#b2f7ef] mt-2"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             Dentaverax olarak kalite, estetik ve dijital hassasiyeti bir arada sunuyoruz. Aşağıda yer alan fiyatlarımız bilgilendirme amaçlıdır.
-          </p>
+          </motion.p>
         </div>
+      </section>
 
-        {/* Fiyat Kartları */}
+      {/* Fiyat Kartları */}
+      <section className="bg-white dark:bg-[#111827] py-24 px-4 text-gray-800 dark:text-white">
         <div className="max-w-5xl mx-auto bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8 space-y-12">
           {fiyatListesi.map((kategori, idx) => (
             <div
@@ -81,7 +104,7 @@ export default function FiyatListesiClient() {
         </div>
       </section>
 
-      {/* CTA ayrı section olarak */}
+      {/* CTA */}
       <ContactCTA
         title="Fiyatlarımız hakkında daha fazla bilgi ister misiniz?"
         description="Dilerseniz uzman ekibimizle görüşerek en uygun çözümü bulabilirsiniz."
@@ -90,5 +113,4 @@ export default function FiyatListesiClient() {
       />
     </>
   );
-
 }

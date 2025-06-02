@@ -92,7 +92,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden backdrop-blur-md bg-white/80 dark:bg-[#0f172a]/80 px-6 pb-6 shadow-md"
+            className="md:hidden backdrop-blur-md bg-white/80 dark:bg-[#0f172a]/50 px-6 pb-6 shadow-md"
           >
             <div className="flex flex-col gap-4">
               {navLinks.map(link => (

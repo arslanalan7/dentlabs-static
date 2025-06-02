@@ -1,53 +1,59 @@
-import { FaTools, FaStopwatch, FaSmileBeam, FaMicroscope } from 'react-icons/fa';
-
-const features = [
-  {
-    icon: <FaMicroscope className="text-3xl text-[#3ed2a7]" />,
-    title: 'Yüksek Teknoloji',
-    desc: 'Son teknoloji CAD/CAM ekipmanlarıyla üretim yapıyoruz.',
-  },
-  {
-    icon: <FaStopwatch className="text-3xl text-[#3ed2a7]" />,
-    title: 'Hızlı Teslimat',
-    desc: 'Zamanında ve planlı üretim süreci ile hızlı teslimat garantisi.',
-  },
-  {
-    icon: <FaSmileBeam className="text-3xl text-[#3ed2a7]" />,
-    title: 'Hasta Memnuniyeti',
-    desc: 'Estetik ve işlevsellik odaklı çözümlerle hasta memnuniyetini ön planda tutuyoruz.',
-  },
-  {
-    icon: <FaTools className="text-3xl text-[#3ed2a7]" />,
-    title: 'Özelleştirilebilir Hizmet',
-    desc: 'Her hekime özel ihtiyaçlara yönelik esnek çözümler sunarız.',
-  },
-];
+import { motion } from 'motion/react';
 
 export default function WhyUsSection() {
+  const items = [
+    {
+      title: 'Yüksek Teknoloji',
+      desc: 'CAD/CAM destekli üretim ve dijital altyapı ile hassas çözümler.',
+    },
+    {
+      title: 'Hızlı Teslimat',
+      desc: 'Zamanında üretim ve lojistik ile hekim memnuniyeti ön planda.',
+    },
+    {
+      title: 'Estetik Odaklılık',
+      desc: 'Doğal görünümlü restorasyonlar ve kişiye özel çözümler.',
+    },
+    {
+      title: 'Uzman Kadro',
+      desc: 'Alanında deneyimli tekniker ve mühendislerden oluşan ekip.',
+    },
+  ];
+
   return (
-    <section className="py-20 bg-white dark:bg-gray-950 px-6 md:px-16">
-      <div className="max-w-6xl mx-auto text-center mb-16">
+    <section className="py-24 px-6 md:px-16 bg-white dark:bg-gray-950">
+      <motion.div
+        className="max-w-6xl mx-auto text-center mb-16"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8 }}
+      >
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
-          Neden <span className="text-[#3ed2a7]">Dentaverax</span>?
+          Neden Dentaverax?
         </h2>
-        <p className="text-gray-600 dark:text-gray-300 mt-4">
-          Diş hekimleri ve klinikler neden bizi tercih ediyor?
+        <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mt-4">
+          Kalite, hız, estetik ve teknoloji ekseninde güçlü çözümler sunuyoruz.
         </p>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
-        {features.map((feature, index) => (
+      </motion.div>
+
+      <motion.div
+        className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 1 }}
+      >
+        {items.map((item, index) => (
           <div
             key={index}
-            className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-6 rounded-xl shadow-md hover:shadow-xl dark:shadow-sm dark:hover:shadow-[0_0_20px_rgba(62,210,167,0.25)] transition"
+            className="bg-[#f0faff] dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl dark:shadow-sm dark:hover:shadow-[0_0_20px_rgba(62,210,167,0.25)] transition"
           >
-            <div className="mb-4">{feature.icon}</div>
-            <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2">
-              {feature.title}
-            </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-300">{feature.desc}</p>
+            <h3 className="text-xl font-semibold text-[#3ed2a7] mb-2">{item.title}</h3>
+            <p className="text-gray-700 dark:text-gray-300">{item.desc}</p>
           </div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }
