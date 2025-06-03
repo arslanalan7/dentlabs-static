@@ -30,7 +30,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="w-full fixed top-0 left-0 z-50 backdrop-blur-md bg-white/80 dark:bg-[#0f172a]/80 shadow-sm">
+    <nav className="w-full top-0 left-0 z-50 backdrop-blur-md bg-white/80 dark:bg-[#0f172a]/80 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
@@ -51,6 +51,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
+              scroll={true}
               className={`text-base font-semibold transition ${
                 pathname === link.href
                   ? 'text-black dark:text-[#b2f7ef] underline underline-offset-4 decoration-[#3ed2a7]'
@@ -99,6 +100,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  scroll={true}
                   className={`text-base font-semibold transition ${
                     pathname === link.href
                       ? 'text-black dark:text-[#b2f7ef] underline underline-offset-4 decoration-[#3ed2a7]'

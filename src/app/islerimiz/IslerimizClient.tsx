@@ -6,19 +6,25 @@ import ContactCTA from '@/components/ContactCTA';
 import StatsSection from '@/components/StatsSection';
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import Lightbox from 'yet-another-react-lightbox';
+import 'yet-another-react-lightbox/styles.css';
 
 const projects = [
   {
     title: 'Zirkonyum Destekli Gülüş Tasarımı',
     desc: 'Estetik beklentisi yüksek bir vakada, dijital planlama ve zirkonyum altyapı ile doğal görünümlü bir gülüş tasarımı tamamlandı.',
+    image: '/projects/project-1.jpg'
   },
   {
     title: 'Implant Üstü Sabit Protez',
     desc: 'Eksik diş problemi yaşayan hastaya, tam uyumlu implant üstü sabit restorasyon uygulandı. Hasta memnuniyeti üst düzeydeydi.',
+    image: '/projects/project-2.jpg'
   },
   {
     title: 'Modelsiz CAD/CAM Uygulaması',
     desc: 'Dijital ölçü alımı sonrası model gereksinimi olmadan hızlı üretim sağlayan bir diş kliniği ile modeless üretim başarıyla test edildi.',
+    image: '/projects/project-3.jpg'
   },
 ];
 
@@ -37,6 +43,9 @@ const testimonials = [
 
 export default function IslerimizPage() {
   const [mounted, setMounted] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState(0);
+
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -80,7 +89,7 @@ export default function IslerimizPage() {
               href="/iletisim"
               className="inline-block bg-[#3ed2a7] text-white font-semibold px-6 py-3 rounded-full shadow-md hover:bg-[#34c3a0] transition"
             >
-             Bize Ulaşın
+              Bize Ulaşın
             </a>
           </motion.div>
         </div>
@@ -89,13 +98,13 @@ export default function IslerimizPage() {
       {/* Projeler Section */}
       <section className="bg-white dark:bg-[#111827] py-24 px-4 text-gray-800 dark:text-white">
         <motion.h2
-            className="text-3xl md:text-4xl font-bold text-center text-[#3ed2a7] mb-4"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
-          >
-            Son Projelerimizden Bazıları
+          className="text-3xl md:text-4xl font-bold text-center text-[#3ed2a7] mb-4"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8 }}
+        >
+          Son Projelerimizden Bazıları
         </motion.h2>
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-8"
@@ -107,13 +116,27 @@ export default function IslerimizPage() {
           {projects.map((item, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-xl dark:shadow-sm dark:hover:shadow-[0_0_20px_rgba(62,210,167,0.25)] transition"
+              className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-xl transition"
             >
+              <Image
+                src={item.image}
+                alt={item.title}
+                width={600}
+                height={400}
+                className="rounded-lg mb-4 cursor-pointer object-cover h-48 w-full"
+                onClick={() => { setCurrentImage(index); setOpen(true); }}
+              />
               <h2 className="text-xl font-semibold text-[#3ed2a7] mb-2">{item.title}</h2>
               <p className="text-gray-700 dark:text-gray-300 text-base md:text-lg">{item.desc}</p>
             </div>
           ))}
         </motion.div>
+        <Lightbox
+          open={open}
+          close={() => setOpen(false)}
+          index={currentImage}
+          slides={projects.map((p) => ({ src: p.image }))}
+        />
       </section>
 
       {/* Yorumlar Section */}
@@ -140,7 +163,7 @@ export default function IslerimizPage() {
           {testimonials.map((item, i) => (
             <div
               key={i}
-              className="bg-gray-100 dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl dark:shadow-sm dark:hover:shadow-[0_0_20px_rgba(62,210,167,0.25)] text-left"
+              className="bg-gray-100 dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl text-left"
             >
               <div className="flex gap-3 items-start">
                 <FaQuoteLeft className="text-[#3ed2a7] text-xl mt-1" />

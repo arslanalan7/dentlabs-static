@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import ScrollToTopOnRouteChange from '@/components/ScrollToTopOnRouteChange';
+import TopBar from '@/components/TopBar';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,7 +48,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-gray-900 text-black dark:text-white transition-colors`}
       >
-        <Navbar />
+        <div className="fixed w-full z-50">
+          <TopBar />
+          <Navbar />
+        </div>
+        <ScrollToTopOnRouteChange />
         <main className="min-h-screen">
           {children}
         </main>

@@ -31,6 +31,13 @@ export default function IletisimPage() {
               <FaGlobe className="text-lg text-[#5eead4]" />
               <span>reallygreatsite.com</span>
             </div>
+            <div className="flex items-start gap-3">
+              <div className="text-lg text-[#5eead4] font-bold">Çalışma Saatleri:</div>
+              <div className="text-white/90 text-sm md:text-base leading-snug">
+                Pazartesi – Cumartesi: 09:00 – 18:00<br />
+                <span className="text-red-300 font-medium">Pazar: Kapalı</span>
+              </div>
+            </div>
             <div className="flex items-center gap-3">
               <a
                 href="https://www.google.com/maps?q=123+Anywhere+St,+Any+City,+ST+12345"
