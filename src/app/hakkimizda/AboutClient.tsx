@@ -81,7 +81,7 @@ export default function AboutClient() {
         </div>
 
         <div className="flex flex-col md:flex-row gap-6 max-w-5xl mx-auto">
-          <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl transition flex-1">
+          <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl dark:shadow-sm dark:hover:shadow-[0_0_20px_rgba(62,210,167,0.25)] transition flex-1">
             <h3 className="text-xl font-semibold text-[#3ed2a7] mb-2 flex items-center gap-2">
               <FaBullseye className="text-[#3ed2a7]" /> Misyonumuz
             </h3>
@@ -90,7 +90,7 @@ export default function AboutClient() {
             </p>
           </div>
 
-          <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl transition flex-1">
+          <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl dark:shadow-sm dark:hover:shadow-[0_0_20px_rgba(62,210,167,0.25)] transition flex-1">
             <h3 className="text-xl font-semibold text-[#3ed2a7] mb-2 flex items-center gap-2">
               <FaRocket className="text-[#3ed2a7]" /> Vizyonumuz
             </h3>
@@ -127,7 +127,7 @@ export default function AboutClient() {
             { icon: <FaTeeth />, title: 'Protez Üretimi', desc: 'Estetik ve konfor odaklı' },
             { icon: <FaStopwatch />, title: 'Hızlı Üretim', desc: 'Zamandan kazandıran sistemler' },
           ].map((item, i) => (
-            <div key={i} className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl p-6 flex flex-col items-center">
+            <div key={i} className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl dark:shadow-sm dark:hover:shadow-[0_0_20px_rgba(62,210,167,0.25)] transition p-6 flex flex-col items-center">
               <div className="text-4xl text-[#3ed2a7] mb-4">{item.icon}</div>
               <h3 className="font-semibold text-[#3ed2a7] text-center">{item.title}</h3>
               <p className="text-sm text-gray-600 dark:text-gray-300 text-center">{item.desc}</p>

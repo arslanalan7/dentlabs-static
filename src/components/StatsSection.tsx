@@ -59,7 +59,7 @@ export default function StatsSection({
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: i * 0.2 }}
             className={clsx(
-              'rounded-xl p-8 text-center transition shadow-md hover:shadow-xl',
+              'rounded-xl p-8 text-center transition shadow-md hover:shadow-xl dark:shadow-sm dark:hover:shadow-[0_0_20px_rgba(62,210,167,0.25)] transition',
               variant === 'inverted'
                 ? 'bg-white/70 dark:bg-gray-800/70'
                 : 'bg-white dark:bg-gray-800'

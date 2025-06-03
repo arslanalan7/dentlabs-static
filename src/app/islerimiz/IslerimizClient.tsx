@@ -116,7 +116,7 @@ export default function IslerimizPage() {
           {projects.map((item, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-xl transition"
+              className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-xl dark:shadow-sm dark:hover:shadow-[0_0_20px_rgba(62,210,167,0.25)] transition"
             >
               <Image
                 src={item.image}
@@ -163,7 +163,7 @@ export default function IslerimizPage() {
           {testimonials.map((item, i) => (
             <div
               key={i}
-              className="bg-gray-100 dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl text-left"
+              className="bg-gray-100 dark:bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-xl dark:shadow-sm dark:hover:shadow-[0_0_20px_rgba(62,210,167,0.25)] transition text-left"
             >
               <div className="flex gap-3 items-start">
                 <FaQuoteLeft className="text-[#3ed2a7] text-xl mt-1" />
