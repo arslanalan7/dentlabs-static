@@ -1,21 +1,24 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { motion } from 'motion/react';
 import Image from 'next/image';
-import ParticlesBackground from '../components/ParticlesBackground';
-import WhyUsSection from '@/components/WhyUsSection';
-import AboutPreview from '@/components/AboutPreview';
-import PartnersSection from '@/components/PartnersSection';
-import ContactCTA from '@/components/ContactCTA';
+
+// Lazy-load edilen bileşenler
+const ParticlesBackground = dynamic(() => import('../components/ParticlesBackground'), { ssr: false });
+const WhyUsSection = dynamic(() => import('@/components/WhyUsSection'));
+const AboutPreview = dynamic(() => import('@/components/AboutPreview'));
+const PartnersSection = dynamic(() => import('@/components/PartnersSection'));
+const ContactCTA = dynamic(() => import('@/components/ContactCTA'));
 
 export default function Home() {
   return (
     <main className="bg-gradient-to-tr from-[#b2f7ef] to-[#a0c4ff] dark:from-[#232946] dark:to-[#1a1a2e]">
-      {/* Hero Bölümü */}
+      {/* Hero Section */}
       <section className="relative overflow-hidden flex flex-col justify-center min-h-screen">
         <ParticlesBackground />
 
-        {/* Dekoratif Oval ve Yıldızlar */}
+        {/* Decorative SVG */}
         <svg
           width="525"
           height="300"
@@ -53,9 +56,8 @@ export default function Home() {
           </g>
         </svg>
 
-        {/* Hero İçerik */}
+        {/* Hero Content */}
         <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center md:gap-10 md:px-6 py-16 md:h-[calc(100vh-96px)]">
-          {/* Sol: Görsel (3/2) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -69,11 +71,11 @@ export default function Home() {
               width={400}
               height={800}
               className="h-72 md:h-[calc(100vh-99px)] w-auto object-cover"
+              quality={75}
               priority
             />
           </motion.div>
 
-          {/* Sağ: Başlık ve CTA (3/1) */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
